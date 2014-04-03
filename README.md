@@ -3,7 +3,7 @@
 This is a project placeholder for the Go source code of the [shooter.io][1]
 server.
 
-![./gopher.jpg](Powered by Go)
+![Powered by Gophers](./gopher.jpg)
 
 The [HTML5 client][2] is already Open Source.
 
