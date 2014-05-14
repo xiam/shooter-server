@@ -2,7 +2,8 @@
 
 Source code of the [shooter.io][1] server.
 
-You may see the [HTML5 client][2] too.
+You may want to checkout the [shooter-html5][2] for a HTML5 client of this
+server.
 
 This is a work in progress.
 
