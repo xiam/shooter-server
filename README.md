@@ -15,8 +15,9 @@ git clone https://github.com/xiam/shooter-server.git
 cd shooter-server
 make
 cd src
+go get -d
 make
-MONGO_HOST="10.0.0.123" ./shooter-server -listen 127.0.0.1:3223
+MONGO_HOST="10.0.0.123" ./shooter-server -listen 0.0.0.0:3223
 ```
 
 ## License
