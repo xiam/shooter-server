@@ -1,5 +1,7 @@
 # shooter.io
 
+![shooter](./shooter.png)
+
 Source code of the [shooter.io][1] server.
 
 You may want to checkout the [shooter-html5][2] for a HTML5 client of this
