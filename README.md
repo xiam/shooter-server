@@ -2,12 +2,35 @@
 
 ![shooter](./shooter.png)
 
-Source code of the [shooter.io][1] server.
+[shooter.io][1] is a network based multiplayer space shooter game.
 
-You may want to checkout the [shooter-html5][2] repo for a HTML5 client of this
-server.
+## shooter-server
 
-This is a work in progress.
+The `shooter-server` is a Go program that runs a universe for space ships that
+can shoot and destroy each other.
+
+It also accepts incoming websockets connections, assigns each connection its
+own ship, and lets the user control her ship.
+
+## shooter-html5
+
+The [shooter-html5][2] repo is a HTML5 client that uses canvas, javascript and
+Websockets to render the game with instructions that arrive from the server.
+
+## How to run the server with vagrant?
+
+```
+cd ~/projects
+git clone https://github.com/xiam/shooter-vagrant.git
+vagrant up
+# Go grab some coffee.
+```
+
+Open `10.2.2.10` in your browser!
+
+See [shooter-vagrant][3].
+
+## How to run the server manually?
 
 ```
 cd ~/projects
@@ -17,8 +40,30 @@ make
 cd src
 go get -d
 make
-MONGO_HOST="10.0.0.123" ./shooter-server -listen 0.0.0.0:3223
+MONGO_HOST="10.0.0.123" ./shooter-server -listen 127.0.0.1:3223
 ```
+
+Now you have a running `shooter-server` that creates a virtual universe for
+space ships, see [shooter-html5][2] for a client to interact with this
+universe.
+
+Note that, in order to connect to the `shooter-server`, you may change a variable
+within the `shooter-html5/src/js/main.js` file. For instance, this line
+
+```
+var WEBSOCKET_SERVICE = 'ws://127.0.0.1:3223/w/';
+```
+
+will instruct the client to connect to the `shooter-server` that is listening
+on `127.0.0.1:3223`.
+
+## Current state
+
+* This a work in progress.
+* Code is still messy and undocumented.
+* I'd like to create a native client for mobile too.
+* I'd like to experiment with UDP messages instead of TCP websockets.
+* Server has been tested with go1.2 under Linux and OSX.
 
 ## License
 
@@ -38,3 +83,4 @@ MONGO_HOST="10.0.0.123" ./shooter-server -listen 0.0.0.0:3223
 
 [1]: http://shooter.io
 [2]: https://github.com/xiam/shooter-html5
+[3]: https://github.com/xiam/shooter-vagrant
