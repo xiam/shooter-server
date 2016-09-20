@@ -12,6 +12,12 @@ shoot and destroy each other.
 It also accepts incoming websockets connections, assigns each connection its
 own ship, and lets the user control her ship.
 
+You can build and run the server with:
+
+```
+make docker-run
+```
+
 ## shooter-html5
 
 The [shooter-html5][2] repo is a HTML5 client that uses canvas, JavaScript and
