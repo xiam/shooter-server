@@ -17,50 +17,10 @@ own ship, and lets the user control her ship.
 The [shooter-html5][2] repo is a HTML5 client that uses canvas, JavaScript and
 Websockets to display whatever is happening on `shooter-server`.
 
-## How to run the server with vagrant?
-
-```
-cd ~/projects
-git clone https://github.com/xiam/shooter-vagrant.git
-vagrant up
-# Go grab some coffee.
-```
-
-Open `10.2.2.10` in your browser!
-
-See [shooter-vagrant][3].
-
-## How to run the server manually?
-
-```
-cd ~/projects
-git clone https://github.com/xiam/shooter-server.git
-cd shooter-server
-make
-cd src
-go get -d
-make
-MONGO_HOST="10.0.0.123" ./shooter-server -listen 127.0.0.1:3223
-```
-
-Now you have a running `shooter-server` that creates a virtual universe for
-space ships, see [shooter-html5][2] for a client to interact with this
-universe.
-
-Note that, in order to connect to the `shooter-server`, you may change a variable
-within the `shooter-html5/src/js/main.js` file. For instance, this line
-
-```
-var WEBSOCKET_SERVICE = 'ws://127.0.0.1:3223/w/';
-```
-
-will instruct the client to connect to the `shooter-server` that is listening
-on `127.0.0.1:3223`.
-
 ## Current state
 
 * This project was never finished, code is messy, racy and undocumented. I
-  don't plan to continue working on this again anytime soon.
+  don't have plans to continue working on this again anytime soon...
 * I'd like to create a native client for mobile too.
 * I'd like to experiment with UDP messages instead of TCP websockets.
 
