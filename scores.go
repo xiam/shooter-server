@@ -19,19 +19,20 @@ import (
 	"os"
 	"strings"
 	"time"
-	"upper.io/db"
-	_ "upper.io/db/mongo"
+	"upper.io/db.v2"
+	"upper.io/db.v2/postgresql"
 )
 
 type mark struct {
-	Name    string    `json:"name" bson:"name"`
-	Points  uint64    `json:"points" bson:"points"`
-	Created time.Time `json:"-" bson:"created"`
+	Name    string    `db:"name" json:"name"`
+	Points  uint64    `db:"points" json:"points"`
+	Created time.Time `db:"created" json:"-"`
 }
 
-var settings db.Settings
-var sess db.Database
-var scores db.Collection
+var (
+	sess   db.Database
+	scores db.Collection
+)
 
 const (
 	defaultDatabase = "shooter"
@@ -41,29 +42,23 @@ const (
 func init() {
 	var err error
 
-	host := os.Getenv("MONGO_HOST")
-
-	if host == "" {
-		host = defaultHost
+	dbAddr := os.Getenv("POSTGRESQL_PORT_5432_TCP_ADDR")
+	if dbAddr == "" {
+		dbAddr = defaultHost
 	}
 
-	settings = db.Settings{
-		Host:     host,
+	settings := postgresql.ConnectionURL{
+		User:     os.Getenv("POSTGRESQL_USER"),
+		Password: os.Getenv("POSTGRESQL_PASSWORD"),
+		Host:     dbAddr,
 		Database: defaultDatabase,
 	}
 
-	if sess, err = db.Open("mongo", settings); err != nil {
+	if sess, err = postgresql.Open(settings); err != nil {
 		log.Fatal("db.Open: ", err)
 	}
 
-	log.Printf("Connected to mongo://%s/%s.\n", host, defaultDatabase)
-
-	scores, err = sess.Collection("scores")
-	if err != nil {
-		if err != db.ErrCollectionDoesNotExists {
-			log.Fatal("db.Collection: ", err)
-		}
-	}
+	scores = sess.Collection("scores")
 }
 
 const maxScores = 5
@@ -79,8 +74,7 @@ func (self *score) Add(name string, points uint64) {
 	name = strings.TrimSpace(name)
 
 	if name != "" && points > 0 {
-		_, err := scores.Append(mark{name, points, time.Now()})
-
+		_, err := scores.Insert(mark{name, points, time.Now()})
 		if err != nil {
 			log.Printf("Append: %v", err)
 		}
@@ -90,10 +84,9 @@ func (self *score) Add(name string, points uint64) {
 func (self *score) GetTop() (list []mark) {
 	list = make([]mark, 0, maxScores)
 
-	res := scores.Find().Sort("-points").Limit(maxScores)
+	res := scores.Find().OrderBy("-points").Limit(maxScores)
 
 	err := res.All(&list)
-
 	if err != nil {
 		log.Printf("res.All: %v", err)
 	}

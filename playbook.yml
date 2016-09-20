@@ -1,0 +1,27 @@
+---
+- hosts: "{{ host | default('prod') }}"
+  remote_user: root
+
+  tasks:
+
+  - name: prepare
+    command: mkdir -p /home/deploy/projects/shooter-server
+
+  - name: upload
+    synchronize:
+      src: ./
+      dest: /home/deploy/projects/shooter-server
+      rsync_opts:
+        - "--verbose"
+        - "--delete"
+        - "--exclude=.git"
+        - "--exclude=*.sw?"
+        - "--exclude=*.retry"
+
+  - name: run
+    command: chdir=/home/deploy/projects/shooter-server {{ item }}
+    environment:
+      POSTGRESQL_USER: "{{ dbuser }}"
+      POSTGRESQL_PASSWORD: "{{ dbpass }}"
+    with_items:
+      - make docker-run

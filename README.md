@@ -6,16 +6,16 @@
 
 ## shooter-server
 
-The `shooter-server` is a Go program that runs a universe for space ships that
-can shoot and destroy each other.
+`shooter-server` is a Go program that runs a universe for space ships that can
+shoot and destroy each other.
 
 It also accepts incoming websockets connections, assigns each connection its
 own ship, and lets the user control her ship.
 
 ## shooter-html5
 
-The [shooter-html5][2] repo is a HTML5 client that uses canvas, javascript and
-Websockets to render the game with instructions that arrive from the server.
+The [shooter-html5][2] repo is a HTML5 client that uses canvas, JavaScript and
+Websockets to display whatever is happening on `shooter-server`.
 
 ## How to run the server with vagrant?
 
@@ -59,15 +59,14 @@ on `127.0.0.1:3223`.
 
 ## Current state
 
-* This a work in progress.
-* Code is still messy and undocumented.
+* This project was never finished, code is messy, racy and undocumented. I
+  don't plan to continue working on this again anytime soon.
 * I'd like to create a native client for mobile too.
 * I'd like to experiment with UDP messages instead of TCP websockets.
-* Server has been tested with go1.2 under Linux and OSX.
 
 ## License
 
-> Copyright 2014 José Carlos Nieto
+> Copyright 2014-today José Carlos Nieto
 >
 > Licensed under the Apache License, Version 2.0 (the "License");
 > you may not use this file except in compliance with the License.
@@ -81,6 +80,6 @@ on `127.0.0.1:3223`.
 > See the License for the specific language governing permissions and
 > limitations under the License.
 
-[1]: http://shooter.io
+[1]: https://shooter.io
 [2]: https://github.com/xiam/shooter-html5
 [3]: https://github.com/xiam/shooter-vagrant

@@ -12,22 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package bullet
+package item
 
 import (
-	"shooter.io/entity"
+	"github.com/xiam/shooter-server/entity"
 )
 
-type Bullet struct {
+type Item struct {
 	*entity.Entity
 }
 
-func NewBullet() *Bullet {
-	self := &Bullet{}
+func NewItem() *Item {
+	self := &Item{}
 	self.Entity = entity.NewEntity()
-	self.Entity.Width = 37
-	self.Entity.Height = 9
-	self.Entity.Diff.Ignore["p"] = true
-	self.Life = 30
+	self.Width = 34.0
+	self.Height = 33.0
+	self.SetDirection(1.0, 0.0)
+	self.Life = 1
 	return self
 }

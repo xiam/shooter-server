@@ -15,7 +15,7 @@
 package ship
 
 import (
-	"shooter.io/entity"
+	"github.com/xiam/shooter-server/entity"
 )
 
 type Ship struct {

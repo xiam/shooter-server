@@ -17,7 +17,7 @@ package entity
 import (
 	"github.com/xiam/g"
 	"math"
-	"shooter.io/diff"
+	"github.com/xiam/shooter-server/diff"
 )
 
 var compressTypes = true

@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"github.com/xiam/g"
 	"math"
-	"shooter.io/bullet"
+	"github.com/xiam/shooter-server/bullet"
 )
 
 const (

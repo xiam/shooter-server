@@ -1,0 +1,2 @@
+[prod]
+prod      ansible_ssh_host=lab.xiam.io

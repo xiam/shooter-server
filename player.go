@@ -27,7 +27,7 @@ import (
 	"math/rand"
 	"net"
 	"os"
-	"shooter.io/ship"
+	"github.com/xiam/shooter-server/ship"
 	"time"
 )
 

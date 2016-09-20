@@ -1,0 +1,91 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "zbfXwcbolWhpzOHYucDhGjx+geY=",
+			"path": "github.com/davecheney/profile",
+			"revision": "c29d1a1565bca9fbeed5eed0e5d52ba78469a16b",
+			"revisionTime": "2014-10-22T01:51:45Z"
+		},
+		{
+			"checksumSHA1": "VXJdAgVeM+scYJH3UgBznkuldBA=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "361d4c0ffd78338ebe0a9e6320cdbe115d7dc026",
+			"revisionTime": "2015-11-02T19:10:34Z"
+		},
+		{
+			"checksumSHA1": "dNYxHiBLalTqluak2/Z8c3RsSEM=",
+			"path": "github.com/lib/pq",
+			"revision": "50761b0867bd1d9d069276790bcd4a3bccf2324a",
+			"revisionTime": "2016-08-31T22:25:20Z"
+		},
+		{
+			"checksumSHA1": "xppHi82MLqVx1eyQmbhTesAEjx8=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "50761b0867bd1d9d069276790bcd4a3bccf2324a",
+			"revisionTime": "2016-08-31T22:25:20Z"
+		},
+		{
+			"checksumSHA1": "K1t6GTguNr/6SP2dL7peKcBvOWQ=",
+			"path": "github.com/xiam/g",
+			"revision": "9bd1fbca2860c9c13abea01ee19694f2374da1dd",
+			"revisionTime": "2014-03-09T20:40:22Z"
+		},
+		{
+			"checksumSHA1": "GpnDdNjZxLOL0rOdwgI5mn5dQ1E=",
+			"path": "upper.io/db.v2",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "xmdIb9FZxQZZH6PLdNPHzW+GuJI=",
+			"path": "upper.io/db.v2/internal/cache",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "8dZt1RYgzUgPFs0xuEMn14W5aiU=",
+			"path": "upper.io/db.v2/internal/cache/hashstructure",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "Lxwz/zM1ncf1gNCa67W35Jv9i9c=",
+			"path": "upper.io/db.v2/internal/logger",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "joaqxSp8rbTXiiSMMaEJfntn+sY=",
+			"path": "upper.io/db.v2/internal/sqladapter",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "PmGQXXNAU67IZjhf7y7MunJIMDQ=",
+			"path": "upper.io/db.v2/internal/sqladapter/exql",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "9BBZRhHkGs7jb3Yozyyri/+NHCg=",
+			"path": "upper.io/db.v2/lib/reflectx",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "70O+pkOfkikFEo3WqqEe2y/qpQc=",
+			"path": "upper.io/db.v2/lib/sqlbuilder",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		},
+		{
+			"checksumSHA1": "31oG6oiWOG9xxt8XQanRp16s1Vg=",
+			"path": "upper.io/db.v2/postgresql",
+			"revision": "7f60b70f1fc4e8c7119f86256f24cc7acfe9ee47",
+			"revisionTime": "2016-08-30T21:47:21Z"
+		}
+	],
+	"rootPath": "github.com/xiam/shooter-server"
+}

@@ -17,7 +17,7 @@ package main
 import (
 	"github.com/xiam/g"
 	"math/rand"
-	"shooter.io/item"
+	"github.com/xiam/shooter-server/item"
 )
 
 const BONUS_POINTS = 50
